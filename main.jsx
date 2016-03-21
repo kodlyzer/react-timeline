@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App.js';
+import DayComponent from './js/components/DayComponent';
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<DayComponent />, document.getElementById('app'))

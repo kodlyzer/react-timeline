@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+    // Include source maps
     devtool: 'eval-source-map',
 
     // Enable re-running webpack

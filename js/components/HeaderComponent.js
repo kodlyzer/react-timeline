@@ -7,8 +7,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div>
-            	{this.props.date}
+            <div id="date-container">
+            	<h3 className="date-heading">{this.props.date}</h3>
 	        </div>
         );
     }

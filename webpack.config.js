@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     // Include source maps
-    devtool: 'eval-source-map',
+    devtool: '#inline-source-map"',
 
     // Enable re-running webpack
     watch: true,
@@ -12,7 +12,7 @@ module.exports = {
 
     module: {
         loaders: [{
-            loader: "babel-loader",
+            loader: "babel",
             // Skip any files outside of your project's `src` directory
             include: [
                 path.resolve(__dirname, "src"),
@@ -21,11 +21,12 @@ module.exports = {
             test: /\.jsx?$/,
             // Options to configure babel with
             query: {
-                // plugins: ['transform-runtime'],
                 presets: ['es2015', 'react', 'stage-0'],
             }
         }]
     },
+
+    plugins : [],
     output: {
         path: path.join(__dirname, 'build/js'),
         publicPath: '/build/',
@@ -35,5 +36,11 @@ module.exports = {
         bundle: [
             './src/index.js'
         ]
-    }
+    },
+
+    devServer: {
+        contentBase: "./",
+        inline: true,
+        port: 8080
+    },
 };

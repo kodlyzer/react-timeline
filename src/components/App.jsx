@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import DayLabel from './DayLabel.jsx';
 
 class App extends Component {
   render() {
-    return (<h1>This is React...</h1>);
+    return (<DayLabel/>);
   }
 }
 export default App;

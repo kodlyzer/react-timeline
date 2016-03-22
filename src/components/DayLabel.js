@@ -3,8 +3,14 @@ import moment from 'moment';
 
 class DayLabel extends Component {
 
-    state = {
-        displayDate: this.getFormattedDate()
+    constructor() {
+
+        super();
+        
+        this.state = {
+            displayDate: this.getFormattedDate()
+        }
+
     }
 
     getFormattedDate() {
@@ -21,7 +27,7 @@ class DayLabel extends Component {
     getDisplayDate() {
 
     	return this.state.displayDate;
-        
+
     }
    
     hasDayPast() {
@@ -30,16 +36,13 @@ class DayLabel extends Component {
 
     }
 
-    testForDayPast() {
-
-        if (this.hasDayPast()) {
-        	this.setDisplayDate()
-        }
-    }
-
     componentDidMount() {
 
-        this.timer = setInterval(this.testForDayPast.bind(this), 50);
+        this.timer = setInterval(()=>{
+            if (this.hasDayPast()) {
+                this.setDisplayDate()
+            }
+        }, 50);
 
     }
 

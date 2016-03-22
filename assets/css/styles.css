@@ -1,9 +1,29 @@
 body {
-  background-color:#fff;
-  -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto, arial, sans-serif;
 }
 
-.date-heading{
-	text-align: center;
+.date-heading {
+    text-align: center;
 }
+
+.hourly-component-parent-container {
+    height: 80%;
+    overflow: auto;
+}
+
+.hourly-component-container {
+    border: 1px solid #D6D6D6;
+    width: 100%;
+}
+
+.hourly-component-container .time{
+	width: 50px;
+	float: left;
+}
+
+.hourly-component-container .events{
+	width: 80%;
+}
+

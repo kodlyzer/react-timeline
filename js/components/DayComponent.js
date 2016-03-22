@@ -1,5 +1,6 @@
 import React from 'react';
-import HeaderComponent from '../components/HeaderComponent'
+import HeaderComponent from '../components/HeaderComponent';
+import HourlyComponent from '../components/HourlyComponent';
 
 class DayComponent extends React.Component {
     constructor(props, context) {
@@ -10,7 +11,9 @@ class DayComponent extends React.Component {
         return (
             <div>
             	<HeaderComponent />
-                <HourlyComponent />
+                <div className='hourly-component-parent-container'>
+                    <HourlyComponent />
+                </div>
 	        </div>
         );
     }

@@ -4,41 +4,53 @@ import moment from 'moment';
 class DayLabel extends Component {
 
     state = {
-        displayDate: moment().format("LL")
+        displayDate: this.getFormattedDate()
+    }
+
+    getFormattedDate() {
+
+    	return moment().format("LL");
+
     }
 
     setDisplayDate() {
 
-    	this.setState({displayDate: moment().format("LL")});
+    	this.setState({displayDate: this.getFormattedDate()});
+    }
+
+    getDisplayDate() {
+
+    	return this.state.displayDate;
+        
     }
    
     hasDayPast() {
 
-    	return moment().format('LL') !== this.currentDate;
+    	return this.getFormattedDate() !== this.getDisplayDate();
 
     }
 
-    testForDayPast(){
+    testForDayPast() {
 
         if (this.hasDayPast()) {
         	this.setDisplayDate()
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
         this.timer = setInterval(this.testForDayPast.bind(this), 50);
 
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
 
         clearInterval(this.timer);
     }
 
 	render() {
 
-	    return (<h1>{this.state.displayDate}</h1>);
+	    return (<h1>{this.getDisplayDate()}</h1>);
 
 	}
 }

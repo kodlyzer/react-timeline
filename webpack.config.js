@@ -33,8 +33,8 @@ module.exports = {
 
     plugins: [],
     output: {
-        path: path.join(__dirname, 'build/js'),
-        publicPath: '/build/',
+        path: path.join(__dirname, 'build'),
+        publicPath: '/',
         filename: '[name].js'
     },
     entry: {
@@ -44,7 +44,6 @@ module.exports = {
     },
 
     devServer: {
-        contentBase: "./",
         inline: true,
         port: 8080
     },
